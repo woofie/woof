@@ -5,35 +5,52 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class dog : MonoBehaviour {
 
+    private float IDLE_ACTIVE_TIME = 10;
+
 	private Rigidbody rb;
 	private Animation anim;
+
+    private float idleTimeLeft;
+
+	private string[] walkAnimations = new string[] {
+		"CorgiRun",
+        "CorgiWalk",
+        "CorgiGallop"
+    };
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animation> ();
-	}
+
+        idleTimeLeft = IDLE_ACTIVE_TIME;
+
+    }
 
 	// Update is called once per frame
 	void Update () {
-		float x = CrossPlatformInputManager.GetAxis ("Horizontal");
-		float y = CrossPlatformInputManager.GetAxis ("Vertical");
 
-		Vector3 movement = new Vector3 (x, 0, y);
-
-		rb.velocity = movement * 4f;
-
-		if (x != 0 && y != 0) {
-			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, Mathf.Atan2 (x, y) * Mathf.Rad2Deg, transform.eulerAngles.z);
-
-		}
-
-		if (x != 0 || y != 0) {
-			anim.Play ("CorgiWalk");
-
-		} else {
-			anim.Play ("CorgiDeath");
-		}
+        idleTimeLeft -= Time.deltaTime;
+        if(idleTimeLeft <= 0)
+        {
+            idleWalk();
+        }
 
 	}
+
+	void startRecording() {
+
+        anim.Play("CorgiIdle");
+
+	}
+
+    void idleWalk()
+    {
+        System.Random rnd = new System.Random();
+        anim.Play(walkAnimations[rnd.Next(0, walkAnimations.Length)]);
+        rb.AddRelativeForce(0, 0, 1);
+    }
+
+
+
 }
