@@ -30,7 +30,6 @@ public class dog : MonoBehaviour {
 		anim = GetComponent<Animation> ();
 	
 		followBall = false;
-	}
 
         idleTimeLeft = IDLE_ACTIVE_TIME;
 
@@ -38,35 +37,36 @@ public class dog : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (true) {// followBall) {
-			var dist = Vector3.Distance (transform.position, target.transform.position);
-			float rate = 0.0f;
-			if (dist > 3) {
-				anim.CrossFade ("CorgiRun");
-				rate = 0.1f;
-			} else if (dist > 1) {
-				anim.CrossFade ("CorgiWalk");
-				rate = 0.03f;
-			} else if (dist >= 0) {
-				anim.CrossFade ("CorgiSitScratch");
-			}
-			transform.position = Vector3.MoveTowards (transform.position, target.transform.position, rate);
+        if (true) {// followBall) {
+            var dist = Vector3.Distance(transform.position, target.transform.position);
+            float rate = 0.0f;
+            if (dist > 3) {
+                anim.CrossFade("CorgiRun");
+                rate = 0.1f;
+            } else if (dist > 1) {
+                anim.CrossFade("CorgiWalk");
+                rate = 0.03f;
+            } else if (dist >= 0) {
+                anim.CrossFade("CorgiSitScratch");
+            }
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, rate);
 
-        idleTimeLeft -= Time.deltaTime;
-        if(idleTimeLeft <= 0)
-        {
-            idleWalk();
+            idleTimeLeft -= Time.deltaTime;
+            if (idleTimeLeft <= 0)
+            {
+                idleWalk();
+            }
+            _direction = (target.position - transform.position).normalized;
+
+            //create the rotation we need to be in to look at the target
+            _lookRotation = Quaternion.LookRotation(_direction);
+
+
+
+            //rotate us over time according to speed until we are in the required rotation
+            transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
         }
-			_direction = (target.position - transform.position).normalized;
-
-			//create the rotation we need to be in to look at the target
-			_lookRotation = Quaternion.LookRotation(_direction);
-
-
-
-			//rotate us over time according to speed until we are in the required rotation
-			transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
-void startRecording() {        
+            void startRecording() {        
 anim.Play("CorgiIdle");
 }
 
