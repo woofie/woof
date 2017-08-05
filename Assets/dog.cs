@@ -29,11 +29,9 @@ public class dog : MonoBehaviour {
 		}
 
 		if (x != 0 || y != 0) {
-			Debug.Log ("should play walk");
 			anim.Play ("CorgiWalk");
 
 		} else {
-			Debug.Log ("Should stay");
 			anim.Play ("CorgiDeath");
 		}
 

@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 97a08167c3d3d284da93fa9992355180
+timeCreated: 1471647644
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bip002 Head
+    100002: Bip002 L Calf
+    100004: Bip002 L Clavicle
+    100006: Bip002 L Foot
+    100008: Bip002 L Forearm
+    100010: Bip002 L Hand
+    100012: Bip002 L HorseLink
+    100014: Bip002 L Thigh
+    100016: Bip002 L UpperArm
+    100018: Bip002 Neck
+    100020: Bip002 Pelvis
+    100022: Bip002 R Calf
+    100024: Bip002 R Clavicle
+    100026: Bip002 R Foot
+    100028: Bip002 R Forearm
+    100030: Bip002 R Hand
+    100032: Bip002 R HorseLink
+    100034: Bip002 R Thigh
+    100036: Bip002 R UpperArm
+    100038: Bip002 Spine
+    100040: Bip002 Spine1
+    100042: Bip002 Spine2
+    100044: Bip002 Tail
+    100046: Bip003
+    100048: Bip003 Footsteps
+    100050: Bip003 HeadNub
+    100052: Bip003 L Toe0
+    100054: Bip003 L Toe0Nub
+    100056: Bip003 Ponytail1
+    100058: Bip003 Ponytail1Nub
+    100060: Bip003 Ponytail2
+    100062: Bip003 Ponytail2Nub
+    100064: Bip003 R Toe0
+    100066: Bip003 R Toe0Nub
+    100068: Bip003 TailNub
+    100070: Bone005
+    100072: Bone006
+    100074: Corgi
+    100076: //RootNode
+    100078: EarRightBase001
+    100080: EarRightBase002
+    100082: EarRightMiddle001
+    100084: EarRightMiddle002
+    400000: Bip002 Head
+    400002: Bip002 L Calf
+    400004: Bip002 L Clavicle
+    400006: Bip002 L Foot
+    400008: Bip002 L Forearm
+    400010: Bip002 L Hand
+    400012: Bip002 L HorseLink
+    400014: Bip002 L Thigh
+    400016: Bip002 L UpperArm
+    400018: Bip002 Neck
+    400020: Bip002 Pelvis
+    400022: Bip002 R Calf
+    400024: Bip002 R Clavicle
+    400026: Bip002 R Foot
+    400028: Bip002 R Forearm
+    400030: Bip002 R Hand
+    400032: Bip002 R HorseLink
+    400034: Bip002 R Thigh
+    400036: Bip002 R UpperArm
+    400038: Bip002 Spine
+    400040: Bip002 Spine1
+    400042: Bip002 Spine2
+    400044: Bip002 Tail
+    400046: Bip003
+    400048: Bip003 Footsteps
+    400050: Bip003 HeadNub
+    400052: Bip003 L Toe0
+    400054: Bip003 L Toe0Nub
+    400056: Bip003 Ponytail1
+    400058: Bip003 Ponytail1Nub
+    400060: Bip003 Ponytail2
+    400062: Bip003 Ponytail2Nub
+    400064: Bip003 R Toe0
+    400066: Bip003 R Toe0Nub
+    400068: Bip003 TailNub
+    400070: Bone005
+    400072: Bone006
+    400074: //RootNode
+    400076: Corgi
+    400078: EarRightBase001
+    400080: EarRightBase002
+    400082: EarRightMiddle001
+    400084: EarRightMiddle002
+    4300000: Corgi
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Corgi
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
