@@ -30,10 +30,8 @@ public class dog : MonoBehaviour {
 		anim = GetComponent<Animation> ();
 	
 		followBall = false;
-	}
 
         idleTimeLeft = IDLE_ACTIVE_TIME;
-
     }
 
 	// Update is called once per frame
@@ -66,9 +64,12 @@ public class dog : MonoBehaviour {
 
 			//rotate us over time according to speed until we are in the required rotation
 			transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
-void startRecording() {        
-anim.Play("CorgiIdle");
-}
+		}
+	}
+
+	void startRecording() {        
+		anim.Play("CorgiIdle");
+	}
 
     void idleWalk()
     {
