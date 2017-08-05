@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
-  <Tracking>
-    <ImageTarget name="data61" size="10.000000 13.333333" />
-    <ImageTarget name="striped-cloth-small" size="5.000000 6.666667" />
-    <ImageTarget name="striped-cloth" size="5.000000 6.665000" />
-    <ImageTarget name="ten-dollar-note-b" size="5.000000 2.371428" />
-  </Tracking>
-</QCARConfig>
