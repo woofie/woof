@@ -9,13 +9,18 @@ public class dog : MonoBehaviour {
 
 	private Rigidbody rb;
 	private Animation anim;
-	public Transform target;
+	public GameObject target;
 	private bool followBall;
 	public float RotationSpeed;
 
     private float idleTimeLeft;
 
-	private string[] walkAnimations = new string[] {
+    private System.Random globalRnd;
+
+    private Transform initTargetTransform;
+
+
+    private string[] walkAnimations = new string[] {
 		"CorgiRun",
         "CorgiWalk",
         "CorgiGallop"
@@ -30,14 +35,19 @@ public class dog : MonoBehaviour {
 		anim = GetComponent<Animation> ();
 	
 		followBall = false;
+        target.SetActive(false);
 
         idleTimeLeft = IDLE_ACTIVE_TIME;
 
+        globalRnd = new System.Random();
+
+        initTargetTransform = target.transform;
     }
 
 	// Update is called once per frame
 	void Update () {
-        if (true) {// followBall) {
+
+        if (followBall) {
             var dist = Vector3.Distance(transform.position, target.transform.position);
             float rate = 0.0f;
             if (dist > 3) {
@@ -51,33 +61,65 @@ public class dog : MonoBehaviour {
             }
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, rate);
 
-            idleTimeLeft -= Time.deltaTime;
-            if (idleTimeLeft <= 0)
-            {
-                idleWalk();
-            }
-            _direction = (target.position - transform.position).normalized;
+            _direction = (target.transform.position - transform.position).normalized;
 
             //create the rotation we need to be in to look at the target
             _lookRotation = Quaternion.LookRotation(_direction);
 
 
 
-            //rotate us over time according to speed until we are in the required rotation
-            transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
+			//rotate us over time according to speed until we are in the required rotation
+			transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
         }
-            void startRecording() {        
-anim.Play("CorgiIdle");
-}
+
+        if (idleTimeLeft != -1)
+        {
+            idleTimeLeft -= Time.deltaTime;
+            if (idleTimeLeft <= 0)
+            {
+                enterIdle();
+            }
+        }
+    }
+
+	void startRecording() {        
+		anim.Play("CorgiIdle");
+	}
+
+    void enterIdle() {
+
+        idleTimeLeft = -1;
+
+        if (globalRnd.Next(0,2) == 0)
+        {
+            idleWalk();
+        }
+        else
+        {
+            FollowBallToggleOn();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+    }
+
+    void exitIdle()
+    {
+        idleTimeLeft = IDLE_ACTIVE_TIME;
+        target.SetActive(false);
+    }
 
     void idleWalk()
     {
-        System.Random rnd = new System.Random();
-        anim.Play(walkAnimations[rnd.Next(0, walkAnimations.Length)]);
+        idleTimeLeft = -1;
+
+        anim.Play(walkAnimations[globalRnd.Next(0, walkAnimations.Length)]);
         rb.AddRelativeForce(0, 0, 1);
     }
 
 	public void FollowBallToggleOn (){
 		followBall = true;
+        target.SetActive(true);
 	}
 }
