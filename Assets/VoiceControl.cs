@@ -52,11 +52,11 @@ public class VoiceControl : MonoBehaviour {
 			WWW req = this.POSTRequest ("https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment",
 				"This is just a test debug string, hopefully I can get some sentiment analysis going.");
 
-			while (!req.isDone) {}
+			//while (!req.isDone) {}
 
 			req = this.POSTRequestGeneral ("https://woof-api.herokuapp.com/api/conversation", "This is just a test debug string, hopefully I can get some sentiment analysis going.", req.text);
 
-			while (!req.isDone) {}
+			//while (!req.isDone) {}
 
 			resultText.text = "RESP: " +  req.text;
 
