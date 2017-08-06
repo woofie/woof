@@ -294,6 +294,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &583448559
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 583448553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 97a08167c3d3d284da93fa9992355180, type: 3}
 --- !u!43 &596716299
 Mesh:
   m_ObjectHideFlags: 0
@@ -518,8 +532,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  thrust: 0
+  origin: {x: 0, y: 0, z: 0}
   dragFactor: 1
   dog: {fileID: 100076, guid: 97a08167c3d3d284da93fa9992355180, type: 3}
+  fetchDrag: 0.1
+  dogAction: mobileMove
 --- !u!54 &878485993
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -603,7 +621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1046070218
 RectTransform:
   m_ObjectHideFlags: 0
@@ -820,7 +838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1358067992
 MonoBehaviour:
   m_ObjectHideFlags: 0
