@@ -20,7 +20,7 @@ public class VoiceControl : MonoBehaviour {
 		"walk",
 		"good",
 		"bad",
-		"dead",
+		"dead", "Doug", "play", "Dad",
 		"speak",
 		"ball",
 	};
@@ -84,7 +84,7 @@ public class VoiceControl : MonoBehaviour {
 		}
 
 		/* Score must be at least 2 for it to recognise command mode. */
-		if (score1 >= 1 && score2 >= 1) {
+		if (score1 >= 0 && score2 >= 0) {
 			for (int i = 0; i < (blocks.Length); i++) {
 				for (int j = 0; j < (commands.Length); j++) {
 					if (blocks [i] == commands [j]) {
@@ -108,7 +108,7 @@ public class VoiceControl : MonoBehaviour {
 //			//resultText.text = "NO COMMAND, YOU SAID: " + resultText.text;
 //		}
 
-		while (!req.isDone) {}
+		// while (!req.isDone) {}
 
 		// resultText.text += req.text;
 
@@ -136,6 +136,9 @@ public class VoiceControl : MonoBehaviour {
 			resultText.text = ":'(";
 			break;
 		case "dead":
+		case "Doug":
+		case "play":
+		case "Dad":
 			resultText.text = "Argh, I'm dead now.";
 			mydog.dead ();
 			break;

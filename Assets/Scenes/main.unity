@@ -434,6 +434,10 @@ Animation:
   - {fileID: 7400000, guid: 9bff914c24d98e546a75e8edde401ac3, type: 3}
   - {fileID: 7400000, guid: e75affef80846774db608a0ffaa043df, type: 3}
   - {fileID: 7400000, guid: b66f55b0f6bc1c04eb77134bb98c883e, type: 3}
+  - {fileID: 7400000, guid: a5ea0323ed8f49241bc0ff9791157054, type: 3}
+  - {fileID: 7400000, guid: b66f55b0f6bc1c04eb77134bb98c883e, type: 3}
+  - {fileID: 7400000, guid: b66f55b0f6bc1c04eb77134bb98c883e, type: 3}
+  - {fileID: 7400000, guid: b66f55b0f6bc1c04eb77134bb98c883e, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -646,7 +650,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 52
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -808,7 +812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.27556252}
   m_AnchorMax: {x: 0.5, y: 0.27556252}
-  m_AnchoredPosition: {x: 259, y: -9.6}
+  m_AnchoredPosition: {x: 259, y: -97}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825827993
