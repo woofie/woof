@@ -17,7 +17,7 @@ public class dog : MonoBehaviour {
 
     private System.Random globalRnd;
 
-    private Transform initTargetTransform;
+    private Vector3 initTargetPosition;
 
 
     private string[] walkAnimations = new string[] {
@@ -41,7 +41,7 @@ public class dog : MonoBehaviour {
 
         globalRnd = new System.Random();
 
-        initTargetTransform = target.transform;
+        initTargetPosition = target.transform.position;
     }
 
 	// Update is called once per frame
@@ -65,8 +65,6 @@ public class dog : MonoBehaviour {
 
             //create the rotation we need to be in to look at the target
             _lookRotation = Quaternion.LookRotation(_direction);
-
-
 
 			//rotate us over time according to speed until we are in the required rotation
 			transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
@@ -113,6 +111,8 @@ public class dog : MonoBehaviour {
     void idleWalk()
     {
         idleTimeLeft = -1;
+
+        target.transform.position = initTargetPosition;
 
         anim.Play(walkAnimations[globalRnd.Next(0, walkAnimations.Length)]);
         rb.AddRelativeForce(0, 0, 1);
