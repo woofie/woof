@@ -10,6 +10,7 @@ using System;
 public class VoiceControl : MonoBehaviour {
 	public Button startRecordingButton; // The button where we start the voice events.
 	public Text resultText; // Where to draw a response.
+	public SpeechRecognizerListener listener;
 
 	public string[] blocks; // Blocks of words the user speaks.
 	public int score1, score2; // Required scores for voice command recognition.
@@ -28,7 +29,7 @@ public class VoiceControl : MonoBehaviour {
 
 	void Start () {
 		if (SpeechRecognizer.ExistsOnDevice()) {
-			SpeechRecognizerListener listener = GameObject.FindObjectOfType<SpeechRecognizerListener>();
+			// listener = GameObject.FindObjectOfType<SpeechRecognizerListener>();
 
 			/* Add a bunch of listeners for all events from speech recognition. */
 			listener.onAuthorizationStatusFetched.AddListener(OnAuthorizationStatusFetched);
