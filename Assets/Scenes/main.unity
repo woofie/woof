@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -258,12 +258,13 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 4872707e2593a5040a69c92907b7f355, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 5b519cebc725a534ba2cbd3e9f61e83f, type: 3}
-  - {fileID: 7400000, guid: a5ea0323ed8f49241bc0ff9791157054, type: 3}
-  - {fileID: 7400000, guid: 4872707e2593a5040a69c92907b7f355, type: 3}
-  - {fileID: 7400000, guid: 9bff914c24d98e546a75e8edde401ac3, type: 3}
+  - {fileID: 7400000, guid: 0d7ca8d11cfec44429584b730b4b1e62, type: 3}
+  - {fileID: 7400000, guid: 57d14e5a62731a341bd1b93ed9a27ce4, type: 3}
   - {fileID: 7400000, guid: e75affef80846774db608a0ffaa043df, type: 3}
+  - {fileID: 7400000, guid: e75affef80846774db608a0ffaa043df, type: 3}
+  - {fileID: 7400000, guid: 4872707e2593a5040a69c92907b7f355, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!114 &583448557
@@ -277,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7872c30f1443d439f868dbd1fb741209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 878485991}
+  target: {fileID: 878485987}
   RotationSpeed: 3
 --- !u!54 &583448558
 Rigidbody:
@@ -290,7 +291,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

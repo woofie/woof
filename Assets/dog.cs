@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class dog : MonoBehaviour {
 
-    private float IDLE_ACTIVE_TIME = 10;
+    private float IDLE_ACTIVE_TIME = 3;
 
 	private Rigidbody rb;
 	private Animation anim;
@@ -42,6 +42,8 @@ public class dog : MonoBehaviour {
         globalRnd = new System.Random();
 
         initTargetPosition = target.transform.position;
+
+        anim.Play("CorgiSitToLay");
     }
 
 	// Update is called once per frame
@@ -70,25 +72,25 @@ public class dog : MonoBehaviour {
 			transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * RotationSpeed);
         }
 
-        if (idleTimeLeft != -1)
+        if(idleTimeLeft == -999 && !followBall)
         {
-            idleTimeLeft -= Time.deltaTime;
-            if (idleTimeLeft <= 0)
-            {
-                enterIdle();
-            }
+            //idleWalk();
         }
+
     }
 
-	void startRecording() {        
-		anim.Play("CorgiIdle");
+	void startRecording() {
+        exitIdle();
+
+        Debug.Log("CorgiIdle");
+        anim.Play("CorgiIdle");
 	}
 
     void enterIdle() {
 
-        idleTimeLeft = -1;
+        idleTimeLeft = -999;
 
-        if (globalRnd.Next(0,2) == 0)
+        if (false && globalRnd.Next(0,2) == 0)
         {
             idleWalk();
         }
@@ -100,26 +102,37 @@ public class dog : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if (idleTimeLeft != -999)
+        {
+            idleTimeLeft -= Time.deltaTime;
+            if (idleTimeLeft <= 0)
+            {
+                enterIdle();
+            }
+        }
     }
 
     void exitIdle()
     {
+        followBall = false;
         idleTimeLeft = IDLE_ACTIVE_TIME;
         target.SetActive(false);
     }
 
     void idleWalk()
     {
-        idleTimeLeft = -1;
-
-        target.transform.position = initTargetPosition;
+        idleTimeLeft = -999;
 
         anim.Play(walkAnimations[globalRnd.Next(0, walkAnimations.Length)]);
-        rb.AddRelativeForce(0, 0, 1);
+        rb.AddRelativeForce(0, 0, 3);
     }
 
 	public void FollowBallToggleOn (){
-		followBall = true;
+        idleTimeLeft = -999;
+
+        target.transform.position = initTargetPosition;
+
+        followBall = true;
         target.SetActive(true);
 	}
 }
