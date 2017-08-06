@@ -110,11 +110,29 @@ public class VoiceControl : MonoBehaviour {
 		/* Send the transcript and sentiment to the server, two requests. */
 		req = this.POSTRequestGeneral ("https://woof-api.herokuapp.com/api/conversation", resultText.text, req.text);
 
-		while (!req.isDone) {}
+		resultText.text = command != "" ? command : resultText.text; // display message on screen, or command.
 
-		resultText.text = req.text;
-
-		/* If there's a command, execute method. */
+		/* Do logic. */
+		switch (command) {
+		case "sit":
+			break;
+		case "stay":
+			break;
+		case "walk":
+			break;
+		case "good":
+			break;
+		case "bad":
+			break;
+		case "dead":
+			break;
+		case "speak":
+			break;
+		case "fetch":
+			break;
+		default:
+			break;
+		}
 	}
 
 	public WWW POSTRequest(string url, string text) {
