@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-
+//tftyfty
 public class dog : MonoBehaviour {
 
-    private float IDLE_ACTIVE_TIME = 3;
+    private float IDLE_ACTIVE_TIME = 10;
 
 	private Rigidbody rb;
 	private Animation anim;
@@ -79,7 +79,7 @@ public class dog : MonoBehaviour {
 
     }
 
-	void startRecording() {
+	public void startRecording() {
         exitIdle();
 
         Debug.Log("CorgiIdle");
@@ -141,4 +141,11 @@ public class dog : MonoBehaviour {
         exitIdle();
         anim.Play("CorgiSitToLay");
     }
+
+	public void dead()
+	{
+		exitIdle();
+		anim.Play("CorgiDeath");
+	}
+
 }

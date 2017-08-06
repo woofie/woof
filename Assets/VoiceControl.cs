@@ -22,7 +22,7 @@ public class VoiceControl : MonoBehaviour {
 		"bad",
 		"dead",
 		"speak",
-		"fetch",
+		"ball",
 	};
 
 	public string command;
@@ -120,23 +120,30 @@ public class VoiceControl : MonoBehaviour {
 		/* Do logic. */
 		switch (command) {
 		case "sit":
-                mydog.sit();
+            mydog.sit();
 
             break;
 		case "stay":
-			break;
-		case "walk":
+			mydog.sit();
 
 			break;
+		case "walk":
+			break;
 		case "good":
+			resultText.text = "Woof! :D";
 			break;
 		case "bad":
+			resultText.text = ":'(";
 			break;
 		case "dead":
+			resultText.text = "Argh, I'm dead now.";
+			mydog.dead ();
 			break;
 		case "speak":
+			resultText.text = "What? I'm a dog? What do you expect me to say?";
 			break;
-		case "fetch":
+		case "ball":
+			mydog.FollowBallToggleOn ();
 			break;
 		default:
 			break;
@@ -236,6 +243,7 @@ public class VoiceControl : MonoBehaviour {
 	public void OnStartRecordingPressed() {
 		if (SpeechRecognizer.IsRecording()) {
 			SpeechRecognizer.StopIfRecording();
+			mydog.startRecording ();
 			startRecordingButton.GetComponentInChildren<Text>().text = "Start Recording";
 		} else {
 			SpeechRecognizer.StartRecording(true);
