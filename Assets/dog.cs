@@ -135,4 +135,10 @@ public class dog : MonoBehaviour {
         followBall = true;
         target.SetActive(true);
 	}
+
+    public void sit()
+    {
+        exitIdle();
+        anim.Play("CorgiSitToLay");
+    }
 }

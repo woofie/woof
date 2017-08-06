@@ -26,9 +26,14 @@ public class VoiceControl : MonoBehaviour {
 	};
 
 	public string command;
+    public GameObject dogObj;
+    private dog mydog;
 
 	void Start () {
-		if (SpeechRecognizer.ExistsOnDevice()) {
+
+        mydog = dogObj.GetComponent<dog>();
+
+        if (SpeechRecognizer.ExistsOnDevice()) {
 			// listener = GameObject.FindObjectOfType<SpeechRecognizerListener>();
 
 			/* Add a bunch of listeners for all events from speech recognition. */
@@ -115,10 +120,13 @@ public class VoiceControl : MonoBehaviour {
 		/* Do logic. */
 		switch (command) {
 		case "sit":
-			break;
+                mydog.sit();
+
+            break;
 		case "stay":
 			break;
 		case "walk":
+
 			break;
 		case "good":
 			break;

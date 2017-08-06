@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -324,6 +324,7 @@ Animation:
   - {fileID: 7400000, guid: 4872707e2593a5040a69c92907b7f355, type: 3}
   - {fileID: 7400000, guid: 9bff914c24d98e546a75e8edde401ac3, type: 3}
   - {fileID: 7400000, guid: e75affef80846774db608a0ffaa043df, type: 3}
+  - {fileID: 7400000, guid: b66f55b0f6bc1c04eb77134bb98c883e, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -536,7 +537,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 52
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -561,16 +562,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 633160489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 502}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1358067995}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18, y: -182}
-  m_SizeDelta: {x: 3000, y: 100}
+  m_AnchorMax: {x: 0.5, y: 0.6308725}
+  m_AnchoredPosition: {x: -18, y: -157}
+  m_SizeDelta: {x: 3000, y: 61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &727277062 stripped
 MonoBehaviour:
@@ -698,7 +699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.27556252}
   m_AnchorMax: {x: 0.5, y: 0.27556252}
-  m_AnchoredPosition: {x: 259, y: -96}
+  m_AnchoredPosition: {x: 259, y: -9.6}
   m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825827993
@@ -707,7 +708,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 825827988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00c3c865782347f41b6358d9fba14b48, type: 3}
   m_Name: 
@@ -1135,6 +1136,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c9d49617176d1f74690c22ba55498c48, type: 2}
+    - target: {fileID: 100076, guid: 97a08167c3d3d284da93fa9992355180, type: 3}
+      propertyPath: m_TagString
+      value: Dog
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97a08167c3d3d284da93fa9992355180, type: 3}
   m_IsPrefabParent: 0
@@ -1335,6 +1340,7 @@ MonoBehaviour:
   - speak
   - fetch
   command: 
+  dogObj: {fileID: 100076, guid: 97a08167c3d3d284da93fa9992355180, type: 3}
 --- !u!1001 &1731801198
 Prefab:
   m_ObjectHideFlags: 0
